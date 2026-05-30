@@ -113,7 +113,7 @@ Regra-mãe: **"MENTORIA" usa SEMPRE Montserrat.** É o que padroniza todas as ap
   font-family:'Montserrat',sans-serif; font-weight:700;
   text-transform:uppercase; letter-spacing:.40em;
   color:var(--orange); font-size:.26em;   /* 26% da altura do nome — FIXO */
-  margin-bottom:.7em;
+  margin-bottom:.45em;
 }
 .wm--center .wm__kicker{margin-right:-.40em;} /* compensa tracking p/ centralizar */
 
@@ -142,12 +142,12 @@ Todas renderizam ao vivo, em proporção real, e herdam o wordmark:
 
 Dados fixos da turma atual (atualizar a cada edição): **Início 16 jun 2026 · 19h30 · terças e quintas · 8 encontros · Google Meet.**
 
-> **Texto padrão da turma (escrever SEMPRE assim):** `2º Turma | 16 de Junho/2026`.
-> Esse é o formato canônico para qualquer peça que mostre turma + data (feed, story, selo, assinatura). No selo ele aparece quebrado em duas linhas ("2º Turma" + "16 de Junho/2026") por causa do espaço circular.
+> **Texto padrão da turma (escrever SEMPRE assim):** `2º Turma | 16 de junho/2026` (com "junho" em minúscula).
+> Esse é o formato canônico para qualquer peça que mostre turma + data (feed, story, selo, assinatura). No selo ele aparece quebrado em duas linhas ("2º Turma" + "16 de junho/2026"), e logo abaixo vem **"Terça-Feira às 19h30"**.
 
 ### Ajustes já aplicados nesta rodada (peças)
 - **Capa de slide (16:9):** logo *Marca com Essência* ampliado e centralizado no painel marinho; removida a frase "Mentoria · Encontro".
-- **Post de feed (1:1):** logo ampliado; etiqueta da turma no padrão `2º Turma | 16 de Junho/2026`.
+- **Post de feed (1:1):** logo ampliado; etiqueta da turma no padrão `2º Turma | 16 de junho/2026`.
 - **Story (9:16):** removido o degradê (`.glow`) do fundo; título reduzido para ficar proporcional; turma adicionada no rodapé.
 - **Selo (1:1):** layout refeito — textos menores, todos dentro do círculo (anel ampliado p/ 88%).
 - **Unidades:** as peças passaram a usar `cqw` (container query) em vez de `vw`. Cada peça escala pelo próprio tamanho, então dá pra exibi-las reduzidas (classes `.fr-slide`, `.fr-feed`, etc. controlam só a largura de visualização) sem distorcer proporção.
