@@ -176,6 +176,35 @@ h3{font-family:'Montserrat';font-size:12px;letter-spacing:.3em;text-transform:up
 .r-mail .li span{color:var(--orange);font-weight:800;}
 .r-mail .prod{font-family:'Montserrat';margin-top:1em;font-size:1.4cqw;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);font-weight:700;}
 
+/* === PEÇA: CARROSSEL 4:5 ===
+   Slides do Instagram em retrato (1080x1350). Poucas palavras, provocativos.
+   Tipos: .cs--capa | .cs--texto | .cs--lista | .cs--cta
+   Tema:  .cs--navy (marinho) | .cs--cream (creme). Tudo em cqw -> escala
+   pela largura do slide, então a tira pode ser exibida pequena. */
+.carousel{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 16px;scroll-snap-type:x mandatory;}
+.carousel::-webkit-scrollbar{height:8px;} .carousel::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px;}
+.cs{flex:0 0 272px;width:272px;height:340px;scroll-snap-align:start;container-type:inline-size;border-radius:8px;overflow:hidden;position:relative;display:grid;grid-template-rows:auto 1fr auto;align-content:stretch;padding:26px 24px;}
+.cs--navy{background:var(--navy);color:var(--cream);}
+.cs--cream{background:var(--cream);color:var(--navy);border:1px solid var(--line);}
+.cs:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--orange);}
+.cs .k{font-family:'Montserrat';font-size:3.4cqw;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--orange);z-index:2;}
+.cs .h{font-family:'Playfair Display';font-weight:600;font-size:11cqw;line-height:1.04;z-index:2;}
+.cs .h em{font-style:italic;color:var(--orange);}
+.cs .p{font-family:'Manrope';font-size:4cqw;line-height:1.5;margin-top:.8em;z-index:2;}
+.cs--navy .p{color:#cdd3da;} .cs--cream .p{color:var(--mut);}
+.cs .mid{display:flex;flex-direction:column;justify-content:center;z-index:2;}
+.cs .foot{align-self:end;z-index:2;}
+.cs .swipe{font-family:'Montserrat';font-size:3.4cqw;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--orange);margin-top:1.2em;}
+.cs .nums{display:flex;flex-direction:column;justify-content:center;z-index:2;width:100%;}
+.cs .num{display:flex;gap:.6em;align-items:baseline;padding:.85em 0;border-bottom:1px solid rgba(217,210,197,.25);}
+.cs--navy .num{border-color:rgba(247,246,242,.16);}
+.cs .num:last-child{border-bottom:none;}
+.cs .num .n{font-family:'Playfair Display';font-style:italic;font-size:8cqw;color:var(--orange);width:1.5em;line-height:1;}
+.cs .num .t{font-family:'Playfair Display';font-size:5.2cqw;line-height:1.12;}
+.cs .turma{font-family:'Montserrat';font-size:3.2cqw;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-top:1em;}
+.cs .turma span{color:var(--orange);}
+.cs .cta{font-family:'Montserrat';display:inline-block;background:var(--orange);color:#fff;padding:.9em 1.5em;font-size:3.4cqw;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:1.2em;}
+
 .code{background:#11161d;color:#cdd6e0;border-radius:8px;padding:22px 24px;overflow:auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.7;}
 .code .c{color:#7c8aa0;} .code .k{color:#e0a458;} .code .s{color:#9ec79f;}
 details{margin-top:14px;border:1px solid var(--line);border-radius:8px;background:#fff;}
@@ -189,7 +218,7 @@ details .code{border-radius:0 0 8px 8px;}
 
 <nav class="nav"><div class="inner">
   <a href="#cores">Cores</a><a href="#tipografia">Tipografia</a><a href="#wordmark">Wordmark</a>
-  <a href="#regras">Regras</a><a href="#pecas">Peças</a>
+  <a href="#regras">Regras</a><a href="#pecas">Peças</a><a href="#carrossel">Carrosséis</a>
 </div></nav>
 
 <header class="cover"><div class="inner">
@@ -415,6 +444,64 @@ details .code{border-radius:0 0 8px 8px;}
       <div class="prod">Mentoria Marca com Essência© · 2º Turma | 16 de junho/2026</div>
     </div>
   </div></div><div class="cap">Assinatura de e-mail</div></div>
+</section>
+
+<section id="carrossel">
+  <div class="sec-no">06 · Carrosséis</div>
+  <h2>Modelos de <em>carrossel</em> · 4:5</h2>
+  <p class="lede">Poucas palavras, muito provocativos. Quatro tipos de slide herdando o sistema: capa (gancho), conteúdo, lista numerada e fechamento (CTA). Marinho e creme se alternam. Arraste a tira para o lado.</p>
+
+  <h3>Carrossel modelo — "Sua marca é fácil de esquecer?"</h3>
+  <div class="carousel">
+
+    <!-- 1 · CAPA (gancho) -->
+    <div class="cs cs--navy cs--capa">
+      <div class="k">Marca com Essência©</div>
+      <div class="mid"><div class="h">Sua marca é <em>fácil de esquecer?</em></div></div>
+      <div class="foot"><span class="wm wm--left on-navy" style="font-size:6cqw">
+  <span class="wm__kicker">Mentoria</span>
+  <span class="wm__l1">Marca com</span>
+  <span class="wm__l2">Essência<span class="wm__c">©</span></span>
+</span><div class="swipe">Arraste →</div></div>
+    </div>
+
+    <!-- 2 · CONTEÚDO (texto) -->
+    <div class="cs cs--cream cs--texto">
+      <div class="k">Verdade incômoda</div>
+      <div class="mid"><div class="h">Preço se discute. <em>Valor</em> se comunica.</div></div>
+      <div class="foot"><div class="p">Quando ninguém entende o seu valor, sobra só o preço pra comparar.</div></div>
+    </div>
+
+    <!-- 3 · CONTEÚDO (texto) -->
+    <div class="cs cs--navy cs--texto">
+      <div class="k">Pensa comigo</div>
+      <div class="mid"><div class="h">Marca <em>morna</em> ninguém lembra.</div></div>
+      <div class="foot"><div class="p">Ser boa não basta. Tem que ser entendida, lembrada e escolhida.</div></div>
+    </div>
+
+    <!-- 4 · LISTA NUMERADA -->
+    <div class="cs cs--cream cs--lista">
+      <div class="k">3 sinais de que falta base</div>
+      <div class="nums">
+        <div class="num"><div class="n">01</div><div class="t">Você compete por <em>preço.</em></div></div>
+        <div class="num"><div class="n">02</div><div class="t">Explica demais o que faz.</div></div>
+        <div class="num"><div class="n">03</div><div class="t">Tudo depende de <em>você.</em></div></div>
+      </div>
+    </div>
+
+    <!-- 5 · FECHAMENTO (CTA) -->
+    <div class="cs cs--navy cs--cta">
+      <div class="k">Próxima turma</div>
+      <div class="mid"><div class="h">Sua marca merece ser <em>escolhida.</em></div></div>
+      <div class="foot">
+        <div class="turma">2º Turma <span>|</span> 16 de junho/2026</div>
+        <div class="turma" style="color:#aeb4bd">Terça-Feira às 19h30</div>
+        <div class="cta">Garanta sua vaga →</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="cap">Carrossel · 4:5 (1080×1350) · capa → conteúdo → conteúdo → lista → CTA</div>
 </section>
 
 </main>

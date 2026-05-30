@@ -139,6 +139,10 @@ Todas renderizam ao vivo, em proporção real, e herdam o wordmark:
 - **Selo da turma** — 1:1
 - **Capa do documento "Base Estratégica da Sua Marca"** — A4 (1:1.414)
 - **Assinatura de e-mail**
+- **Carrosséis** — 4:5 (1080×1350) · quatro tipos de slide: capa (gancho), conteúdo, lista numerada e fechamento (CTA)
+
+#### Carrosséis (seção 06 do HTML)
+Linha editorial: **poucas palavras, muito provocativos.** Alternar marinho (`.cs--navy`) e creme (`.cs--cream`). Cada slide é `.cs` + um tipo: `.cs--capa | .cs--texto | .cs--lista | .cs--cta`. Estrutura em 3 zonas (grid `auto 1fr auto`): kicker no topo, mensagem no centro, rodapé embaixo. Textos em `cqw` (escalam pela largura do slide). **Atenção:** o `padding` do `.cs` é em `px` fixo — `%`/`cqw` não funcionam ali porque o slide é item flex do carrossel (a % resolveria pela largura do carrossel, não do slide). Capa leva o wordmark + "Arraste →"; o slide de CTA leva turma + horário + botão.
 
 Dados fixos da turma atual (atualizar a cada edição): **Início 16 jun 2026 · 19h30 · terças e quintas · 8 encontros · Google Meet.**
 
