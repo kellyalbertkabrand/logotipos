@@ -5,6 +5,9 @@
 > Marca e brandbook desenvolvidos por **KA | Inteligência para Marcas** (Kelly Albert) e **VM Rocks** (Gabi Lucato).
 > Fonte dos dados: brandbook exportado página a página (pasta `jpegs` no Drive). Onde o valor veio de leitura óptica e pode ter imprecisão, está marcado com *(verificar)*.
 
+> **Sistema visual ao vivo:** `brandbook_sabre.html` (arquivo único, abre offline, com a fonte Neue Alte Grotesk embutida e tokens de cor em CSS).
+> **Fontes:** os `.otf` reais (5 pesos) estão em `fontes/`.
+
 ---
 
 ## 0. A marca
