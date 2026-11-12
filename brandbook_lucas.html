@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Book — Lucas Martini · Proteção & Sucessão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   BRAND BOOK — LUCAS MARTINI · PROTEÇÃO & SUCESSÃO
+   Diagramação inspirada no brand book da Claudia Brecht,
+   aplicada na identidade (proposta) do Lucas.
+   Tokens de cor/tipografia em :root — trocar quando a ID final chegar.
+   ===================================================================== */
+:root{
+  --navy:#152A3F;        /* marinho profundo — segurança, solidez */
+  --navy-900:#0E1E2E;    /* fundo mais escuro */
+  --navy-700:#1D3550;
+  --ivory:#F3EFE7;       /* marfim — fundo claro */
+  --ivory-2:#ECE7DB;     /* marfim levemente mais quente */
+  --bronze:#C2A062;      /* champanhe/bronze sobre marinho */
+  --bronze-ink:#9A7338;  /* bronze mais fechado sobre marfim */
+  --ink:#1B2A38;         /* texto sobre marfim */
+  --stone:#64707C;       /* texto secundário sobre marfim */
+  --mist:#AEB8C2;        /* texto secundário sobre marinho */
+  --line-l:#D8D0C1;      /* linhas sobre marfim */
+  --line-d:#2C4056;      /* linhas sobre marinho */
+
+  --serif:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans:'Jost', 'Helvetica Neue', Arial, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:#cfc9bd;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  padding:28px 0;
+}
+
+/* ---------- SLIDE (16:9) ---------- */
+.deck{display:flex;flex-direction:column;align-items:center;gap:26px}
+.slide{
+  position:relative;
+  width:min(1120px,94vw);
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:var(--ivory);
+  box-shadow:0 18px 50px rgba(0,0,0,.22);
+  container-type:inline-size;
+}
+.slide__in{position:absolute;inset:0;padding:7.4cqw 7cqw}
+.slide__side{
+  position:absolute;right:2.4cqw;top:50%;transform:translateY(-50%) rotate(180deg);
+  writing-mode:vertical-rl;text-transform:uppercase;letter-spacing:.34em;
+  font-size:1.55cqw;color:var(--stone);opacity:.72;font-weight:400;
+}
+.slide__pg{position:absolute;right:3cqw;bottom:3cqw;font-size:1.5cqw;letter-spacing:.1em;color:var(--stone);opacity:.7}
+.slide__in{display:flex;flex-direction:column;justify-content:center}
+
+/* ---------- TYPE ---------- */
+.eyebrow{font-family:var(--sans);font-weight:500;text-transform:uppercase;
+  letter-spacing:.38em;font-size:1.65cqw;color:var(--bronze-ink);margin-bottom:2.4cqw}
+.title{font-family:var(--serif);font-weight:300;line-height:1.02;
+  font-size:7.6cqw;letter-spacing:.005em;color:var(--ink)}
+.title--sm{font-size:5.6cqw}
+.lead{font-family:var(--serif);font-weight:400;font-size:3.2cqw;line-height:1.28;color:var(--ink)}
+.body{font-size:1.98cqw;line-height:1.6;color:var(--stone);font-weight:300}
+.body b,.lead b{font-weight:600;color:var(--ink)}
+.rule{display:flex;align-items:center;gap:0;margin:3cqw 0}
+.rule::before{content:"";height:1px;background:var(--bronze-ink);flex:1;opacity:.6}
+.rule::after{content:"";width:5px;height:5px;border:1px solid var(--bronze-ink);transform:rotate(45deg);margin-left:-3px;opacity:.7}
+.rule--short::before{flex:0 0 26%}
+.rule--short::after{margin-left:-3px}
+
+/* two-column content */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:7cqw;align-items:start}
+.cols--photo{grid-template-columns:1fr 1.15fr}
+.stack>*+*{margin-top:1.6cqw}
+
+/* ---------- COVER ---------- */
+.cover{background:var(--navy-900);color:var(--ivory)}
+.cover .slide__in{align-items:center;text-align:center;justify-content:center}
+.cover__mono{
+  width:12cqw;height:12cqw;border:1px solid var(--bronze);
+  display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:4cqw}
+.cover__mono span{font-family:var(--serif);font-weight:400;font-size:5.4cqw;letter-spacing:.06em;color:var(--ivory)}
+.cover__mono::before,.cover__mono::after{content:"";position:absolute;width:9px;height:9px;border:1px solid var(--bronze)}
+.cover__mono::before{top:-5px;left:-5px;border-right:0;border-bottom:0}
+.cover__mono::after{bottom:-5px;right:-5px;border-left:0;border-top:0}
+.cover__name{font-family:var(--serif);font-weight:300;font-size:7cqw;letter-spacing:.14em;text-transform:uppercase;line-height:1}
+.cover__sig{font-family:var(--sans);font-weight:400;letter-spacing:.42em;text-transform:uppercase;
+  font-size:1.9cqw;color:var(--bronze);margin-top:2.4cqw}
+.cover__bb{font-family:var(--sans);letter-spacing:.6em;text-transform:uppercase;font-size:2.2cqw;
+  color:var(--mist);margin-top:6cqw}
+.cover__dot{width:1px;height:5cqw;background:var(--bronze);opacity:.6;margin:3.4cqw auto 0}
+
+/* ---------- DIVIDER (navy) ---------- */
+.divider{background:var(--navy);color:var(--ivory)}
+.divider .slide__side{color:var(--mist)}
+.divider .slide__pg{color:var(--mist)}
+.divider__num{font-family:var(--serif);font-weight:300;font-size:9cqw;color:var(--bronze);line-height:.8;margin-bottom:2cqw}
+.divider .title{color:#fff;font-size:8.4cqw}
+.divider__sub{font-family:var(--sans);text-transform:uppercase;letter-spacing:.22em;
+  font-size:2cqw;color:var(--mist);margin-top:2.4cqw}
+.divider .rule::before{background:var(--bronze)}
+.divider .rule::after{border-color:var(--bronze)}
+.divider__grid::before{content:"";position:absolute;inset:0;opacity:.07;pointer-events:none;
+  background-image:linear-gradient(var(--line-d) 1px,transparent 1px),linear-gradient(90deg,var(--line-d) 1px,transparent 1px);
+  background-size:4cqw 4cqw}
+
+/* content on navy */
+.onnavy{background:var(--navy);color:var(--ivory)}
+.onnavy .title{color:#fff}
+.onnavy .eyebrow{color:var(--bronze)}
+.onnavy .body{color:var(--mist)}
+.onnavy .lead{color:#fff}
+.onnavy .rule::before{background:var(--bronze)}
+.onnavy .rule::after{border-color:var(--bronze)}
+.onnavy .slide__side,.onnavy .slide__pg{color:var(--mist)}
+
+/* ---------- PILLARS ---------- */
+.pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:3cqw;margin-top:4cqw}
+.pillar__n{font-family:var(--serif);font-size:4.4cqw;color:var(--bronze-ink);font-weight:300;line-height:1}
+.pillar__bar{height:1px;background:var(--line-l);margin:1.4cqw 0}
+.pillar__t{font-family:var(--sans);text-transform:uppercase;letter-spacing:.14em;font-size:1.7cqw;color:var(--ink);font-weight:500;margin-bottom:1cqw}
+.pillar__d{font-size:1.65cqw;line-height:1.5;color:var(--stone);font-weight:300}
+
+/* three / two column blocks */
+.blocks{display:grid;gap:5cqw;margin-top:3.4cqw}
+.blocks--3{grid-template-columns:repeat(3,1fr)}
+.blocks--2{grid-template-columns:repeat(2,1fr)}
+.block__k{font-family:var(--sans);text-transform:uppercase;letter-spacing:.2em;font-size:1.55cqw;color:var(--bronze-ink);font-weight:500;margin-bottom:1.4cqw}
+.block__t{font-family:var(--serif);font-size:3.4cqw;color:var(--ink);font-weight:400;line-height:1;margin-bottom:1.4cqw}
+.block__d{font-size:1.8cqw;line-height:1.55;color:var(--stone);font-weight:300}
+.onnavy .block__k{color:var(--bronze)} .onnavy .block__t{color:#fff} .onnavy .block__d{color:var(--mist)}
+.block__line{height:1px;background:var(--line-l);margin-bottom:1.6cqw}
+.onnavy .block__line{background:var(--line-d)}
+
+/* tom de voz grid */
+.voz{display:grid;grid-template-columns:1fr 1fr;gap:3cqw 6cqw;margin-top:1cqw}
+.voz__k{font-family:var(--serif);font-size:3cqw;color:var(--ink);font-weight:400}
+.voz__d{font-size:1.8cqw;color:var(--stone);font-weight:300}
+.voz__row{border-top:1px solid var(--line-l);padding-top:1.4cqw}
+
+/* golden circle */
+.gc{display:flex;align-items:center;justify-content:center;position:relative;aspect-ratio:1;width:34cqw}
+.gc i{position:absolute;border-radius:50%;border:1px solid var(--line-l);display:flex;align-items:flex-start;justify-content:center;font-family:var(--sans);text-transform:uppercase;letter-spacing:.2em;font-size:1.5cqw;color:var(--stone);padding-top:1.2cqw}
+.gc .c1{inset:0}
+.gc .c2{inset:16%;background:#e5ddcc;color:var(--ink)}
+.gc .c3{inset:34%;background:var(--navy);color:var(--bronze);border-color:var(--navy)}
+
+/* persona card */
+.card{border:1px solid var(--line-l);padding:3cqw;margin-top:2.6cqw}
+.card .block__k{margin-bottom:1cqw}
+.onnavy .card{border-color:var(--line-d)}
+
+/* swatches */
+.sw{display:grid;grid-template-columns:repeat(5,1fr);gap:2cqw;margin-top:3.4cqw}
+.sw__c{aspect-ratio:3/4;border-radius:3px;display:flex;align-items:flex-end;padding:1.2cqw;border:1px solid rgba(0,0,0,.08)}
+.sw__h{font-family:var(--sans);font-size:1.35cqw;letter-spacing:.08em}
+.sw__name{font-size:1.5cqw;color:var(--stone);margin-top:.8cqw;font-weight:400}
+.sw__hex{font-size:1.3cqw;color:var(--stone);opacity:.8;letter-spacing:.06em}
+
+/* type specimen */
+.spec__row{border-top:1px solid var(--line-l);padding:2cqw 0;display:flex;justify-content:space-between;align-items:baseline;gap:3cqw}
+.spec__big{font-family:var(--serif);font-size:4.6cqw;font-weight:300;color:var(--ink)}
+.spec__big.s2{font-family:var(--sans);font-size:2.6cqw;font-weight:400;letter-spacing:.02em}
+.spec__lab{font-family:var(--sans);text-transform:uppercase;letter-spacing:.16em;font-size:1.4cqw;color:var(--stone);white-space:nowrap}
+
+/* DNA */
+.dna{display:flex;flex-direction:column;gap:1.4cqw;margin-top:1cqw}
+.dna__i{display:flex;align-items:center;gap:2.4cqw;border-bottom:1px solid var(--line-d);padding-bottom:1.3cqw}
+.dna__n{font-family:var(--sans);font-size:1.4cqw;color:var(--bronze);letter-spacing:.1em;width:3cqw}
+.dna__t{font-family:var(--serif);font-size:3.2cqw;color:#fff;font-weight:400}
+.mono-sm{width:13cqw;height:13cqw;border:1px solid var(--bronze);display:flex;align-items:center;justify-content:center;position:relative}
+.mono-sm span{font-family:var(--serif);font-size:6cqw;color:#fff}
+.mono-sm::before,.mono-sm::after{content:"";position:absolute;width:10px;height:10px;border:1px solid var(--bronze)}
+.mono-sm::before{top:-5px;left:-5px;border-right:0;border-bottom:0}
+.mono-sm::after{bottom:-5px;right:-5px;border-left:0;border-top:0}
+
+/* manifesto */
+.mani{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:5cqw;align-items:start}
+.mani p{font-size:1.75cqw;line-height:1.62;color:var(--mist);font-weight:300}
+.mani p+p{margin-top:1.4cqw}
+.mani .hi{color:#fff}
+.mani .bronze{color:var(--bronze);font-family:var(--serif);font-size:2.6cqw;line-height:1.2}
+
+/* photo slot */
+.photo{background:linear-gradient(135deg,#223a52,#16293c);border:1px solid var(--line-l);
+  display:flex;align-items:center;justify-content:center;aspect-ratio:4/5;position:relative;overflow:hidden}
+.photo span{font-family:var(--sans);text-transform:uppercase;letter-spacing:.2em;font-size:1.5cqw;color:var(--mist);text-align:center;padding:2cqw}
+.photo::before,.photo::after{content:"";position:absolute;width:16px;height:16px;border:1px solid var(--bronze)}
+.photo::before{top:8px;left:8px;border-right:0;border-bottom:0}
+.photo::after{bottom:8px;right:8px;border-left:0;border-top:0}
+
+@media print{
+  body{background:#fff;padding:0}
+  .slide{width:100%;box-shadow:none;break-after:page;page-break-after:always}
+  @page{size:1120px 630px;margin:0}
+}
+.note{width:min(1120px,94vw);color:#3a3a3a;font-family:var(--sans);font-size:13px;line-height:1.6;opacity:.8;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- 01 · CAPA -->
+<section class="slide cover">
+  <div class="slide__in">
+    <div class="cover__mono"><span>LM</span></div>
+    <div class="cover__name">Lucas Martini</div>
+    <div class="cover__sig">Proteção &amp; Sucessão</div>
+    <div class="cover__dot"></div>
+    <div class="cover__bb">Brand Book</div>
+  </div>
+</section>
+
+<!-- 02 · PARA QUE SERVE -->
+<section class="slide">
+  <div class="slide__in">
+    <span class="eyebrow">Antes de começar</span>
+    <h1 class="title title--sm">Para que serve<br>este brand book</h1>
+    <div class="rule rule--short"></div>
+    <div class="cols">
+      <div></div>
+      <div class="stack">
+        <p class="body">Este brand book reúne, em um só lugar, <b>a essência, a voz e a identidade</b> da marca Lucas Martini.</p>
+        <p class="body">Ele garante <b>a unidade da marca</b>: todos os pontos de contato com a mesma consistência e a mesma qualidade, não importa quem produza.</p>
+        <p class="body">Use como guia antes de criar, aprovar ou contratar qualquer material. <b>Marca consistente é marca reconhecida.</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">02</div>
+</section>
+
+<!-- 03 · DIVISOR 01 -->
+<section class="slide divider divider__grid">
+  <div class="slide__in">
+    <div class="divider__num">01</div>
+    <h2 class="title">Essência<br>da marca</h2>
+    <div class="rule rule--short"></div>
+    <div class="divider__sub">Construir segurança para que as escolhas continuem possíveis.</div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">03</div>
+</section>
+
+<!-- 04 · ESSÊNCIA -->
+<section class="slide">
+  <div class="slide__in">
+    <div class="cols">
+      <div>
+        <h2 class="title title--sm">Essência</h2>
+        <div class="rule rule--short"></div>
+      </div>
+      <div class="stack">
+        <p class="lead">Construir segurança para que as escolhas continuem possíveis.</p>
+        <p class="body">Nem tudo pode ser previsto. Mas é possível se preparar para que <b>um imprevisto não elimine alternativas</b> nem comprometa o que levou anos para ser construído.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">04</div>
+</section>
+
+<!-- 05 · QUEM É LUCAS -->
+<section class="slide">
+  <div class="slide__in">
+    <div class="cols cols--photo" style="align-items:center">
+      <div class="photo"><span>Foto de Lucas Martini<br>(pasta LUCAS · Imagens)</span></div>
+      <div>
+        <span class="eyebrow">Quem é</span>
+        <h2 class="title title--sm">Lucas Martini</h2>
+        <div class="rule rule--short"></div>
+        <p class="body" style="margin-bottom:1.6cqw">Especialista em <b>Proteção &amp; Sucessão</b>, com mais de dez anos de atuação.</p>
+        <p class="body">Sua experiência no mercado financeiro e a vivência com famílias e empresas deram origem a uma atuação consultiva, baseada em <b>planejamento, personalização, relacionamento e acompanhamento</b>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">05</div>
+</section>
+
+<!-- 06 · CAUSA / LIDERANÇA / TRIBO -->
+<section class="slide">
+  <div class="slide__in">
+    <h2 class="title title--sm">Causa, liderança<br>e tribo</h2>
+    <div class="rule"></div>
+    <div class="blocks blocks--3">
+      <div><div class="block__k">Causa</div><div class="block__line"></div><p class="block__d">Ampliar a cultura de <b>proteção e preparação</b> antes do imprevisto.</p></div>
+      <div><div class="block__k">Liderança</div><div class="block__line"></div><p class="block__d">Ajudar pessoas a enxergar responsabilidade sobre <b>renda, família, patrimônio ou empresa</b>.</p></div>
+      <div><div class="block__k">Tribo</div><div class="block__line"></div><p class="block__d">Pessoas que carregam riscos, impactos e possibilidades <b>antes que a urgência determine as decisões</b>.</p></div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">06</div>
+</section>
+
+<!-- 07 · PRINCÍPIO CENTRAL -->
+<section class="slide onnavy divider__grid">
+  <div class="slide__in">
+    <span class="eyebrow">Princípio central</span>
+    <p class="lead" style="font-size:4.6cqw;max-width:20ch">O que levou anos para ser construído <b style="color:var(--bronze)">não deveria ficar entregue ao acaso</b>.</p>
+    <div class="rule rule--short" style="margin-top:4cqw"></div>
+    <p class="body" style="max-width:52ch">Planejamento é uma forma de <b>proteger conquistas e preservar possibilidades</b> diante do que não pode ser controlado.</p>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">07</div>
+</section>
+
+<!-- 08 · PÚBLICO E PERSONA -->
+<section class="slide">
+  <div class="slide__in">
+    <div class="cols">
+      <div>
+        <h2 class="title title--sm">Público-alvo<br>e persona</h2>
+        <div class="rule rule--short"></div>
+        <p class="body">Profissionais, empresários, sócios e famílias que possuem <b>responsabilidades financeiras, patrimoniais ou sucessórias</b> e querem proteger o que construíram.</p>
+      </div>
+      <div>
+        <div class="card">
+          <div class="block__k">Persona central</div>
+          <p class="lead" style="font-size:2.5cqw">Alguém que entende o valor das suas conquistas e quer se preparar para que <b>um imprevisto não comprometa sua família, seu patrimônio ou sua empresa</b>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">08</div>
+</section>
+
+<!-- 09 · ARQUÉTIPOS -->
+<section class="slide">
+  <div class="slide__in">
+    <h2 class="title title--sm">Arquétipos da marca</h2>
+    <div class="rule"></div>
+    <div class="blocks blocks--2">
+      <div>
+        <div class="block__k">Principal</div>
+        <div class="block__t">O Sábio</div>
+        <div class="block__line"></div>
+        <p class="block__d">Traduz complexidade, orienta decisões e <b>transforma informação em planejamento</b>.</p>
+      </div>
+      <div>
+        <div class="block__k">Secundário</div>
+        <div class="block__t">O Cuidador</div>
+        <div class="block__line"></div>
+        <p class="block__d">Protege, acompanha e <b>assume responsabilidade</b> sobre decisões que afetam pessoas, famílias e empresas.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">09</div>
+</section>
+
+<!-- 10 · PILARES -->
+<section class="slide">
+  <div class="slide__in">
+    <h2 class="title title--sm">Pilares da marca</h2>
+    <div class="rule"></div>
+    <div class="pillars">
+      <div><div class="pillar__n">01</div><div class="pillar__bar"></div><div class="pillar__t">Proteção</div><p class="pillar__d">Preservar o que foi construído.</p></div>
+      <div><div class="pillar__n">02</div><div class="pillar__bar"></div><div class="pillar__t">Planejamento</div><p class="pillar__d">Antecipar riscos e criar alternativas.</p></div>
+      <div><div class="pillar__n">03</div><div class="pillar__bar"></div><div class="pillar__t">Personalização</div><p class="pillar__d">Construir soluções a partir de cada realidade.</p></div>
+      <div><div class="pillar__n">04</div><div class="pillar__bar"></div><div class="pillar__t">Confiança</div><p class="pillar__d">Sustentar relações de longo prazo.</p></div>
+      <div><div class="pillar__n">05</div><div class="pillar__bar"></div><div class="pillar__t">Continuidade</div><p class="pillar__d">Permitir que família, patrimônio e empresa possam seguir.</p></div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">10</div>
+</section>
+
+<!-- 11 · DNA -->
+<section class="slide onnavy">
+  <div class="slide__in">
+    <div class="cols" style="align-items:center">
+      <div>
+        <h2 class="title" style="color:#fff;font-size:5.6cqw">DNA<br>da marca</h2>
+        <div class="rule rule--short"></div>
+        <div class="mono-sm" style="margin-top:3cqw"><span>LM</span></div>
+      </div>
+      <div>
+        <div class="dna">
+          <div class="dna__i"><span class="dna__n">01</span><span class="dna__t">Proteção</span></div>
+          <div class="dna__i"><span class="dna__n">02</span><span class="dna__t">Confiança</span></div>
+          <div class="dna__i"><span class="dna__n">03</span><span class="dna__t">Responsabilidade</span></div>
+          <div class="dna__i"><span class="dna__n">04</span><span class="dna__t">Personalização</span></div>
+          <div class="dna__i"><span class="dna__n">05</span><span class="dna__t">Continuidade</span></div>
+        </div>
+        <p class="body" style="margin-top:2.4cqw">Atributos que devem permanecer presentes em <b style="color:#fff">qualquer expressão da marca</b>, do atendimento à comunicação.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">11</div>
+</section>
+
+<!-- 12 · DIVISOR 02 -->
+<section class="slide divider divider__grid">
+  <div class="slide__in">
+    <div class="divider__num">02</div>
+    <h2 class="title">Voz<br>da marca</h2>
+    <div class="rule rule--short"></div>
+    <div class="divider__sub">Conhecimento sem distanciamento. Segurança sem arrogância.</div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">12</div>
+</section>
+
+<!-- 13 · VOZ DA MARCA -->
+<section class="slide">
+  <div class="slide__in">
+    <div class="cols">
+      <div>
+        <h2 class="title title--sm">Voz da marca</h2>
+        <div class="rule rule--short"></div>
+        <p class="body">A voz de Lucas deve transmitir <b>conhecimento sem distanciamento</b> e <b>segurança sem arrogância</b>.</p>
+      </div>
+      <div>
+        <div class="block__k">A voz é</div>
+        <p class="lead">Clara, segura, humana, elegante e consultiva.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">13</div>
+</section>
+
+<!-- 14 · TOM DE VOZ -->
+<section class="slide">
+  <div class="slide__in">
+    <h2 class="title title--sm">Tom de voz</h2>
+    <div class="rule"></div>
+    <div class="voz">
+      <div class="voz__row"><div class="voz__k">Técnico</div><div class="voz__d">sem ser complicado.</div></div>
+      <div class="voz__row"><div class="voz__k">Direto</div><div class="voz__d">sem dramatização.</div></div>
+      <div class="voz__row"><div class="voz__k">Seguro</div><div class="voz__d">sem ser arrogante.</div></div>
+      <div class="voz__row"><div class="voz__k">Humano</div><div class="voz__d">sem ser frio.</div></div>
+      <div class="voz__row"><div class="voz__k">Sofisticado</div><div class="voz__d">sem ostentação.</div></div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">14</div>
+</section>
+
+<!-- 15 · DIVISOR 03 -->
+<section class="slide divider divider__grid">
+  <div class="slide__in">
+    <div class="divider__num">03</div>
+    <h2 class="title">Posiciona-<br>mento</h2>
+    <div class="rule rule--short"></div>
+    <div class="divider__sub">Proteção &amp; Sucessão para o que precisa continuar.</div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">15</div>
+</section>
+
+<!-- 16 · POSICIONAMENTO -->
+<section class="slide onnavy">
+  <div class="slide__in">
+    <div class="cols">
+      <div>
+        <h2 class="title" style="color:#fff;font-size:5.4cqw">Posiciona-<br>mento</h2>
+        <div class="rule rule--short"></div>
+      </div>
+      <div class="stack">
+        <p class="lead" style="color:#fff">Proteção &amp; Sucessão para o que precisa continuar.</p>
+        <p class="body">Lucas Martini é especialista em Proteção &amp; Sucessão para <b style="color:#fff">pessoas, famílias e empresas</b> que querem preservar o que construíram e manter possibilidades diante de imprevistos e transições.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">16</div>
+</section>
+
+<!-- 17 · GOLDEN CIRCLE -->
+<section class="slide">
+  <div class="slide__in">
+    <div class="cols" style="align-items:center">
+      <div>
+        <h2 class="title title--sm">Golden Circle</h2>
+        <div class="rule rule--short"></div>
+        <div class="gc">
+          <i class="c1">O quê</i>
+          <i class="c2">Como</i>
+          <i class="c3">Por quê</i>
+        </div>
+      </div>
+      <div class="stack">
+        <div><div class="block__k">Por quê</div><div class="block__line"></div><p class="block__d">Preservar possibilidades quando a vida foge do previsto.</p></div>
+        <div><div class="block__k">Como</div><div class="block__line"></div><p class="block__d">Com planejamento personalizado, conhecimento, relacionamento e acompanhamento.</p></div>
+        <div><div class="block__k">O quê</div><div class="block__line"></div><p class="block__d">Estratégias de proteção pessoal, familiar, empresarial e sucessória.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">17</div>
+</section>
+
+<!-- 18 · MANIFESTO -->
+<section class="slide onnavy">
+  <div class="slide__in">
+    <div class="mani">
+      <div>
+        <h2 class="title" style="color:#fff;font-size:5cqw">Manifesto</h2>
+        <div class="rule rule--short"></div>
+        <p class="bronze">Há coisas que levam uma vida inteira para construir.</p>
+      </div>
+      <div>
+        <p>Uma família. Uma carreira. Uma empresa. Um patrimônio. Uma história. São anos de trabalho, escolhas e renúncias.</p>
+        <p class="hi">E é justamente por isso que proteger não é pensar no pior. É reconhecer o valor de tudo o que deu certo.</p>
+        <p>A vida nem sempre avisa quando vai mudar. Mas podemos decidir, enquanto há tempo, como queremos atravessar essas mudanças.</p>
+      </div>
+      <div>
+        <p>Para que uma família continue amparada. Uma empresa continue em pé. Um patrimônio não precise ser desfeito às pressas. E os planos não desapareçam junto com o imprevisto.</p>
+        <p class="hi">Porque não podemos controlar tudo o que acontece. Mas podemos proteger aquilo que queremos que continue.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">18</div>
+</section>
+
+<!-- 19 · DIVISOR 04 -->
+<section class="slide divider divider__grid">
+  <div class="slide__in">
+    <div class="divider__num">04</div>
+    <h2 class="title">Território<br>visual</h2>
+    <div class="rule rule--short"></div>
+    <div class="divider__sub">Como a marca se assina, se veste e se reconhece.</div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">19</div>
+</section>
+
+<!-- 20 · ARQUITETURA DA MARCA -->
+<section class="slide">
+  <div class="slide__in">
+    <div class="cols" style="align-items:center">
+      <div>
+        <h2 class="title title--sm">Arquitetura<br>da marca</h2>
+        <div class="rule rule--short"></div>
+        <p class="body">O uso de <b>“Martini”</b> ganha força porque é a forma pela qual Lucas já é reconhecido em seu convívio pessoal e profissional.</p>
+      </div>
+      <div class="stack">
+        <div class="voz__row"><div class="block__k">Marca pessoal</div><div class="block__t" style="font-size:3cqw">Lucas Martini</div></div>
+        <div class="voz__row"><div class="block__k">Assinatura</div><div class="block__t" style="font-size:3cqw">Martini <span style="color:var(--bronze-ink)">|</span> Proteção &amp; Sucessão</div></div>
+        <div class="voz__row"><div class="block__k">Atuação</div><div class="block__t" style="font-size:3cqw">Proteção &amp; Sucessão</div></div>
+        <div class="voz__row"><div class="block__k">Monograma</div><div class="block__t" style="font-size:3cqw">LM</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">20</div>
+</section>
+
+<!-- 21 · PALETA -->
+<section class="slide">
+  <div class="slide__in">
+    <span class="eyebrow">Território visual · proposta</span>
+    <h2 class="title title--sm">Paleta de cores</h2>
+    <div class="rule"></div>
+    <div class="sw">
+      <div><div class="sw__c" style="background:#152A3F"><span class="sw__h" style="color:#fff">Aa</span></div><div class="sw__name">Marinho</div><div class="sw__hex">#152A3F</div></div>
+      <div><div class="sw__c" style="background:#0E1E2E"><span class="sw__h" style="color:#fff">Aa</span></div><div class="sw__name">Marinho profundo</div><div class="sw__hex">#0E1E2E</div></div>
+      <div><div class="sw__c" style="background:#C2A062"><span class="sw__h" style="color:#1B2A38">Aa</span></div><div class="sw__name">Champanhe</div><div class="sw__hex">#C2A062</div></div>
+      <div><div class="sw__c" style="background:#F3EFE7"><span class="sw__h" style="color:#1B2A38">Aa</span></div><div class="sw__name">Marfim</div><div class="sw__hex">#F3EFE7</div></div>
+      <div><div class="sw__c" style="background:#64707C"><span class="sw__h" style="color:#fff">Aa</span></div><div class="sw__name">Cinza-pedra</div><div class="sw__hex">#64707C</div></div>
+    </div>
+    <p class="body" style="margin-top:3cqw">Marinho como base de <b>segurança e solidez</b>; champanhe como acento de <b>sofisticação sem ostentação</b>; marfim e cinza-pedra para respiro e leitura.</p>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">21</div>
+</section>
+
+<!-- 22 · TIPOGRAFIA -->
+<section class="slide">
+  <div class="slide__in">
+    <span class="eyebrow">Território visual · proposta</span>
+    <h2 class="title title--sm">Tipografia</h2>
+    <div class="rule"></div>
+    <div class="spec__row"><div class="spec__big">Proteção &amp; Sucessão</div><div class="spec__lab">Cormorant Garamond · títulos</div></div>
+    <div class="spec__row"><div class="spec__big s2">Clara, segura, humana, elegante e consultiva.</div><div class="spec__lab">Jost · rótulos e texto</div></div>
+    <p class="body" style="margin-top:2.6cqw">A serifada elegante carrega a <b>autoridade do Sábio</b>; a sans geométrica traz <b>clareza e cuidado</b> na leitura. (Fontes de referência — substituir pelas tipografias oficiais quando definidas.)</p>
+  </div>
+  <div class="slide__side">Brand Book · Lucas Martini</div>
+  <div class="slide__pg">22</div>
+</section>
+
+<!-- 23 · ENCERRAMENTO -->
+<section class="slide cover">
+  <div class="slide__in">
+    <div class="cover__mono"><span>LM</span></div>
+    <div class="cover__sig" style="margin-top:0;margin-bottom:2cqw">Proteção &amp; Sucessão</div>
+    <p class="lead" style="color:#fff;max-width:24ch;text-align:center">Não podemos controlar tudo o que acontece. Mas podemos proteger aquilo que queremos que continue.</p>
+    <div class="cover__dot"></div>
+    <div class="cover__bb" style="font-size:1.5cqw;letter-spacing:.3em">Marca e brand book · KA | Inteligência para Marcas</div>
+  </div>
+</section>
+
+</div>
+
+<p class="note">Brand book do Lucas Martini · diagramação inspirada no brand book da Claudia Brecht, aplicada na identidade (proposta) do Lucas. Cores e tipografia são uma direção inicial — defina os tokens em <code>:root</code> quando a ID final (logo/paleta/fontes) estiver fechada.</p>
+
+</body>
+</html>
