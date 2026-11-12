@@ -198,9 +198,13 @@ body{
 .photo::after{bottom:8px;right:8px;border-left:0;border-top:0}
 
 @media print{
-  body{background:#fff;padding:0}
-  .slide{width:100%;box-shadow:none;break-after:page;page-break-after:always}
   @page{size:1120px 630px;margin:0}
+  html,body{background:#fff;padding:0;margin:0}
+  .deck{gap:0}
+  .slide{width:1120px;height:630px;box-shadow:none;overflow:hidden;
+    break-inside:avoid;break-after:page;page-break-after:always}
+  .slide:last-child{break-after:auto;page-break-after:auto}
+  .note{display:none}
 }
 .note{width:min(1120px,94vw);color:#3a3a3a;font-family:var(--sans);font-size:13px;line-height:1.6;opacity:.8;margin-top:6px}
 </style>
@@ -226,11 +230,13 @@ body{
     <h1 class="title title--sm">Para que serve<br>este brand book</h1>
     <div class="rule rule--short"></div>
     <div class="cols">
-      <div></div>
       <div class="stack">
         <p class="body">Este brand book reúne, em um só lugar, <b>a essência, a voz e a identidade</b> da marca Lucas Martini.</p>
         <p class="body">Ele garante <b>a unidade da marca</b>: todos os pontos de contato com a mesma consistência e a mesma qualidade, não importa quem produza.</p>
-        <p class="body">Use como guia antes de criar, aprovar ou contratar qualquer material. <b>Marca consistente é marca reconhecida.</b></p>
+      </div>
+      <div class="stack">
+        <p class="body">Use como guia antes de criar, aprovar ou contratar qualquer material.</p>
+        <p class="lead" style="font-size:2.6cqw"><b>Marca consistente é marca reconhecida.</b></p>
       </div>
     </div>
   </div>
